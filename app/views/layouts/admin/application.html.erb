@@ -5,12 +5,12 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <%= render 'layouts/shim' %>
+  <%= render 'layouts/admin/shim' %>
 </head>
 <body>
   <div id="wrapper">
     <div id="header">
-    <%= render 'layouts/header' %>
+    <%= render 'layouts/admin/header' %>
     </div>
     <div id="content">
       <div class="span3">
@@ -36,7 +36,7 @@
       </div> 
     </div>      
     <div id="foooter">
-      <%= render 'layouts/footer' %>
+      <%= render 'layouts/admin/footer' %>
     </div>
   </div>
 </body>

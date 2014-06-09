@@ -1,0 +1,29 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">Brand</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li><%= link_to "Trang chủ", anonymous_home_path %></li>
+          <li class="divider-vertical"></li>
+          <li><a href="#">Sản phẩm</a></li>
+          <li class="divider-vertical"></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+      <div class="nav-collapse pull-right">
+        <ul class="nav">
+          <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  Đăng nhập
+                  <i class="caret"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Admin", new_admin_session_path %></li>
+              </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

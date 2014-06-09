@@ -1,0 +1,26 @@
+<section id="products-show">
+  <h1 class="page-title"><%= t ".title" %></h1>
+  <div class="actions">
+    <%= link_to t(".back"), anonymous_products_path, class: :btn %>
+  </div>
+  <div class="center" style="margin-bottom  : 30px;">
+    <%= image_tag @product.image, height: "300", width: "400", alt: "No Image" %><br/>
+    Image
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% ["name", "description", "price", "product_line"].each do |label| %>
+      <tr>  
+        <td><%= label %></td>
+        <td><%= @product.send(label) %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>

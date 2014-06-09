@@ -1,0 +1,40 @@
+<section id="products-index" class="row-fluid">
+  <h1 class="page-title"><%= t ".all_product" %></h1>
+  <div class="actions">
+    <%= link_to t(".filter"), "#", class: %w(btn search-form-toggle), "data-target" => "search-form" %>
+  </div>
+
+  <%= search_form_for [:anonymous, @q],  method: :get,
+    html: {id: "search-form", class: "search-form #{@q.conditions.empty? ? "" : "show"}"} do |f| %>
+    <div class="row-fluid search-row">
+      <div class="span4 search-col">
+        <%= f.label :name_cont %>
+        <%= f.text_field :name_cont %>
+      </div>
+      <div class="span4 search-col">
+        <%= f.label :price_lt %>
+        <%= f.text_field :price_lt %>
+      </div>
+      <div class="span4 search-col">
+        <%= f.label :price_gt %>
+        <%= f.text_field :price_gt %>
+      </div>
+    </div>
+    <div class="row-fluid search-row">
+      <div class="span12 search-col">
+        <%= f.submit "Search", class: :btn %>
+      </div>
+    </div>
+  <% end %>
+
+  <ul class="products">
+    <% @products.each do |product| %>
+      <li>
+        <%= image_tag product.image, height: "180", width: "180", alt: "No Image" %>
+        <div><%= link_to product.name, anonymous_product_path(product) %></div>
+        <div>Price: <%= number_to_currency(product.price, unit: "") %> VND</div>
+      </li>
+    <% end %>
+  </ul>
+  <%= paginate @products %>
+</section>

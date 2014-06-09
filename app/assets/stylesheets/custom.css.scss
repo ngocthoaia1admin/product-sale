@@ -124,6 +124,7 @@ p {
 -------------------------------------------------- */
 
 .bs-docs-sidenav {
+  margin-top: 50px;
   width: 200px;
   padding: 0;
   background-color: #fff;
@@ -185,4 +186,19 @@ p {
   position: absolute;
   top: auto;
   bottom: 270px;
+}
+
+.products {
+  list-style: none;
+  li {
+    overflow: auto;
+    vertical-align: middle;
+    padding: 10px;
+    margin: 5px;
+    width: 200px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    #background: blue;
+  }
 }

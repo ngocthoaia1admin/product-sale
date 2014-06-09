@@ -15,20 +15,14 @@
         <ul class="nav">
           <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                  Dropdown
+                  <%= current_admin.name %>
                   <i class="caret"></i>
               </a>
               <ul class="dropdown-menu">
-                  <li>
-                      <a href="#">Thông tin cá nhân</a>
-                  </li>
-                  <li>
-                      <a href="#">Đổi mật khẩu</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                      <a href="#">Đắng xuất</a>
-                  </li>
+                <li><a href="#">Thông tin cá nhân</a></li>
+                <li><%= link_to "Đổi mật khẩu", "", method: "get" %></li>
+                <li class="divider"></li>
+                <li><%= link_to "Đắng xuất", destroy_admin_session_path, method: "delete" %></li>
               </ul>
           </li>
         </ul>

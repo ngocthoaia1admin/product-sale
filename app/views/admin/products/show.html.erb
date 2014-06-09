@@ -1,0 +1,30 @@
+<section id="products-show">
+  <h1 class="page-title"><%= t ".title" %></h1>
+  <div class="actions">
+    <%= link_to t(".edit"), edit_admin_product_path(@product), class: :btn %>
+    <%= link_to t(".back"), admin_products_path, class: :btn %>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% ["name", "description", "price", "product_line"].each do |label| %>
+      <tr>
+        <td></td>
+        <td><%= label %></td>
+        <td><%= @product.send(label) %></td>
+      </tr>
+    <% end %>
+      <tr>
+        <td></td>
+        <td>Image</td>
+        <td><img alt="Assets" src="/uploads/products/image<%= @product.id %>" width="150px" height="150px"></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

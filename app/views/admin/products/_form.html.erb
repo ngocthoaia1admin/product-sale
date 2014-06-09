@@ -1,0 +1,31 @@
+<%= form_for [:admin, @product], html: {class: "form-horizontal"} do |f| %>
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th style="width: 180px;"><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% ["name", "description", "price", "product_line"].each do |label| %>
+      <tr>
+        <td></td>
+        <td><%= f.label label %></td>
+        <td>
+          <%= f.text_field label, class: "input-xlarge", required: true %>
+        </td>
+      </tr>
+    <% end %>
+      <tr>
+        <td></td>
+        <td><%= f.label :image %></td>
+        <td><%= f.file_field :image %></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="form-actions">
+    <%= f.submit class: %w(btn btn-primary) %>
+  </div>
+<% end %>

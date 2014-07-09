@@ -8,34 +8,18 @@
   <%= render 'layouts/anonymous/shim' %>
 </head>
 <body>
-  <div id="wrapper">
-    <div id="header">
+  <div id="main_container">  
     <%= render 'layouts/anonymous/header' %>
-    </div>
-    <div id="content">
-      <div class="span3">
-        <div class="row">
-          <div class="span2 bs-docs-sidebar">
-          <% if params[:controller].to_s.eql?("anonymous/products") %>
-            <ul class="nav nav-list bs-docs-sidenav affix-top">
-              <li class="center"><a href="#">Menu</a></li>
-              <% (1..10).each do |i| %>
-                <li><%= link_to "Type #{i}", anonymous_products_path("q[name_cont]" => i) %></li>
-              <% end %>
-            </ul>
-          <% end %>
-          </div>
-        </div>
-      </div>
-      <div class="span11">
+    <div id="main_content">
+      <%= render "layouts/anonymous/menu_tab" %>
+      <div class="crumb_navigation"> Navigation: <span class="current">Home</span> </div>
+      <%= render "layouts/anonymous/left" %>
+      <div class="center_content">
         <%flash.each do |key, value| %>
           <div class="alert alert-<%= key%>"><%= value%></div>
         <%end%>
         <%= yield %>
       </div> 
-    </div>
-    <div id="foooter">
-      <%= render 'layouts/anonymous/footer' %>
     </div>
   </div>
 </body>

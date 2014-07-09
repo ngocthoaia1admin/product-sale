@@ -96,30 +96,6 @@ p {
   }
 }
 
-/* footer */
-
-#wrapper {
-  min-height:100%;
-  position:relative;
-}
-#header {
-  margin: 15px;
-}
-#content {
-  margin-top: 50px;
-  padding-bottom:100px; /* Height of the footer element */
-}
-#footer {
-  margin-top: 45px;
-  border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
-  background-color: #eee;
-  position:absolute;
-  bottom:0;
-  margin: 20px;
-  left:0;
-  right: 0;
-}
 /* Sidenav for Docs
 -------------------------------------------------- */
 
@@ -186,19 +162,4 @@ p {
   position: absolute;
   top: auto;
   bottom: 270px;
-}
-
-.products {
-  list-style: none;
-  li {
-    overflow: auto;
-    vertical-align: middle;
-    padding: 10px;
-    margin: 5px;
-    width: 200px;
-    display: inline-block;
-    text-align: center;
-    font-weight: bold;
-    #background: blue;
-  }
 }
